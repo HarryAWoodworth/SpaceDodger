@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BD8D41C9221B073E0053EE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D41C8221B073E0053EE39 /* AppDelegate.swift */; };
+		BD8D41CB221B073E0053EE39 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD8D41CA221B073E0053EE39 /* GameScene.sks */; };
+		BD8D41CD221B073E0053EE39 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD8D41CC221B073E0053EE39 /* Actions.sks */; };
+		BD8D41CF221B073E0053EE39 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D41CE221B073E0053EE39 /* GameScene.swift */; };
+		BD8D41D1221B073E0053EE39 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D41D0221B073E0053EE39 /* GameViewController.swift */; };
+		BD8D41D4221B073E0053EE39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8D41D2221B073E0053EE39 /* Main.storyboard */; };
+		BD8D41D6221B073E0053EE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8D41D5221B073E0053EE39 /* Assets.xcassets */; };
+		BD8D41D9221B073E0053EE39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8D41D7221B073E0053EE39 /* LaunchScreen.storyboard */; };
+		BD8D41E4221B073F0053EE39 /* studious_parakeetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D41E3221B073F0053EE39 /* studious_parakeetTests.swift */; };
+		BD8D41EF221B073F0053EE39 /* studious_parakeetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D41EE221B073F0053EE39 /* studious_parakeetUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BD8D41E0221B073F0053EE39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD8D41BD221B073E0053EE39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD8D41C4221B073E0053EE39;
+			remoteInfo = "studious-parakeet";
+		};
+		BD8D41EB221B073F0053EE39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD8D41BD221B073E0053EE39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD8D41C4221B073E0053EE39;
+			remoteInfo = "studious-parakeet";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BD8D41C5221B073E0053EE39 /* studious-parakeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "studious-parakeet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8D41C8221B073E0053EE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BD8D41CA221B073E0053EE39 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		BD8D41CC221B073E0053EE39 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		BD8D41CE221B073E0053EE39 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		BD8D41D0221B073E0053EE39 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		BD8D41D3221B073E0053EE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BD8D41D5221B073E0053EE39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD8D41D8221B073E0053EE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BD8D41DA221B073E0053EE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD8D41DF221B073F0053EE39 /* studious-parakeetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "studious-parakeetTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8D41E3221B073F0053EE39 /* studious_parakeetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studious_parakeetTests.swift; sourceTree = "<group>"; };
+		BD8D41E5221B073F0053EE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD8D41EA221B073F0053EE39 /* studious-parakeetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "studious-parakeetUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8D41EE221B073F0053EE39 /* studious_parakeetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studious_parakeetUITests.swift; sourceTree = "<group>"; };
+		BD8D41F0221B073F0053EE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BD8D41C2221B073E0053EE39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD8D41DC221B073F0053EE39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD8D41E7221B073F0053EE39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BD8D41BC221B073E0053EE39 = {
+			isa = PBXGroup;
+			children = (
+				BD8D41C7221B073E0053EE39 /* studious-parakeet */,
+				BD8D41E2221B073F0053EE39 /* studious-parakeetTests */,
+				BD8D41ED221B073F0053EE39 /* studious-parakeetUITests */,
+				BD8D41C6221B073E0053EE39 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BD8D41C6221B073E0053EE39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD8D41C5221B073E0053EE39 /* studious-parakeet.app */,
+				BD8D41DF221B073F0053EE39 /* studious-parakeetTests.xctest */,
+				BD8D41EA221B073F0053EE39 /* studious-parakeetUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD8D41C7221B073E0053EE39 /* studious-parakeet */ = {
+			isa = PBXGroup;
+			children = (
+				BD8D41C8221B073E0053EE39 /* AppDelegate.swift */,
+				BD8D41CA221B073E0053EE39 /* GameScene.sks */,
+				BD8D41CC221B073E0053EE39 /* Actions.sks */,
+				BD8D41CE221B073E0053EE39 /* GameScene.swift */,
+				BD8D41D0221B073E0053EE39 /* GameViewController.swift */,
+				BD8D41D2221B073E0053EE39 /* Main.storyboard */,
+				BD8D41D5221B073E0053EE39 /* Assets.xcassets */,
+				BD8D41D7221B073E0053EE39 /* LaunchScreen.storyboard */,
+				BD8D41DA221B073E0053EE39 /* Info.plist */,
+			);
+			path = "studious-parakeet";
+			sourceTree = "<group>";
+		};
+		BD8D41E2221B073F0053EE39 /* studious-parakeetTests */ = {
+			isa = PBXGroup;
+			children = (
+				BD8D41E3221B073F0053EE39 /* studious_parakeetTests.swift */,
+				BD8D41E5221B073F0053EE39 /* Info.plist */,
+			);
+			path = "studious-parakeetTests";
+			sourceTree = "<group>";
+		};
+		BD8D41ED221B073F0053EE39 /* studious-parakeetUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BD8D41EE221B073F0053EE39 /* studious_parakeetUITests.swift */,
+				BD8D41F0221B073F0053EE39 /* Info.plist */,
+			);
+			path = "studious-parakeetUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BD8D41C4221B073E0053EE39 /* studious-parakeet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD8D41F3221B073F0053EE39 /* Build configuration list for PBXNativeTarget "studious-parakeet" */;
+			buildPhases = (
+				BD8D41C1221B073E0053EE39 /* Sources */,
+				BD8D41C2221B073E0053EE39 /* Frameworks */,
+				BD8D41C3221B073E0053EE39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "studious-parakeet";
+			productName = "studious-parakeet";
+			productReference = BD8D41C5221B073E0053EE39 /* studious-parakeet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BD8D41DE221B073F0053EE39 /* studious-parakeetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD8D41F6221B073F0053EE39 /* Build configuration list for PBXNativeTarget "studious-parakeetTests" */;
+			buildPhases = (
+				BD8D41DB221B073F0053EE39 /* Sources */,
+				BD8D41DC221B073F0053EE39 /* Frameworks */,
+				BD8D41DD221B073F0053EE39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD8D41E1221B073F0053EE39 /* PBXTargetDependency */,
+			);
+			name = "studious-parakeetTests";
+			productName = "studious-parakeetTests";
+			productReference = BD8D41DF221B073F0053EE39 /* studious-parakeetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BD8D41E9221B073F0053EE39 /* studious-parakeetUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD8D41F9221B073F0053EE39 /* Build configuration list for PBXNativeTarget "studious-parakeetUITests" */;
+			buildPhases = (
+				BD8D41E6221B073F0053EE39 /* Sources */,
+				BD8D41E7221B073F0053EE39 /* Frameworks */,
+				BD8D41E8221B073F0053EE39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD8D41EC221B073F0053EE39 /* PBXTargetDependency */,
+			);
+			name = "studious-parakeetUITests";
+			productName = "studious-parakeetUITests";
+			productReference = BD8D41EA221B073F0053EE39 /* studious-parakeetUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD8D41BD221B073E0053EE39 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Harry Woodworth";
+				TargetAttributes = {
+					BD8D41C4221B073E0053EE39 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					BD8D41DE221B073F0053EE39 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BD8D41C4221B073E0053EE39;
+					};
+					BD8D41E9221B073F0053EE39 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BD8D41C4221B073E0053EE39;
+					};
+				};
+			};
+			buildConfigurationList = BD8D41C0221B073E0053EE39 /* Build configuration list for PBXProject "studious-parakeet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BD8D41BC221B073E0053EE39;
+			productRefGroup = BD8D41C6221B073E0053EE39 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD8D41C4221B073E0053EE39 /* studious-parakeet */,
+				BD8D41DE221B073F0053EE39 /* studious-parakeetTests */,
+				BD8D41E9221B073F0053EE39 /* studious-parakeetUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BD8D41C3221B073E0053EE39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD8D41D4221B073E0053EE39 /* Main.storyboard in Resources */,
+				BD8D41CB221B073E0053EE39 /* GameScene.sks in Resources */,
+				BD8D41D6221B073E0053EE39 /* Assets.xcassets in Resources */,
+				BD8D41D9221B073E0053EE39 /* LaunchScreen.storyboard in Resources */,
+				BD8D41CD221B073E0053EE39 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD8D41DD221B073F0053EE39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD8D41E8221B073F0053EE39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BD8D41C1221B073E0053EE39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD8D41CF221B073E0053EE39 /* GameScene.swift in Sources */,
+				BD8D41D1221B073E0053EE39 /* GameViewController.swift in Sources */,
+				BD8D41C9221B073E0053EE39 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD8D41DB221B073F0053EE39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD8D41E4221B073F0053EE39 /* studious_parakeetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD8D41E6221B073F0053EE39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD8D41EF221B073F0053EE39 /* studious_parakeetUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BD8D41E1221B073F0053EE39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD8D41C4221B073E0053EE39 /* studious-parakeet */;
+			targetProxy = BD8D41E0221B073F0053EE39 /* PBXContainerItemProxy */;
+		};
+		BD8D41EC221B073F0053EE39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD8D41C4221B073E0053EE39 /* studious-parakeet */;
+			targetProxy = BD8D41EB221B073F0053EE39 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BD8D41D2221B073E0053EE39 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD8D41D3221B073E0053EE39 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BD8D41D7221B073E0053EE39 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD8D41D8221B073E0053EE39 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BD8D41F1221B073F0053EE39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BD8D41F2221B073F0053EE39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BD8D41F4221B073F0053EE39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "studious-parakeet/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "grasscube.studious-parakeet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BD8D41F5221B073F0053EE39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "studious-parakeet/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "grasscube.studious-parakeet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		BD8D41F7221B073F0053EE39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "studious-parakeetTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "grasscube.studious-parakeetTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/studious-parakeet.app/studious-parakeet";
+			};
+			name = Debug;
+		};
+		BD8D41F8221B073F0053EE39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "studious-parakeetTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "grasscube.studious-parakeetTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/studious-parakeet.app/studious-parakeet";
+			};
+			name = Release;
+		};
+		BD8D41FA221B073F0053EE39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "studious-parakeetUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "grasscube.studious-parakeetUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "studious-parakeet";
+			};
+			name = Debug;
+		};
+		BD8D41FB221B073F0053EE39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "studious-parakeetUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "grasscube.studious-parakeetUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "studious-parakeet";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD8D41C0221B073E0053EE39 /* Build configuration list for PBXProject "studious-parakeet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD8D41F1221B073F0053EE39 /* Debug */,
+				BD8D41F2221B073F0053EE39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD8D41F3221B073F0053EE39 /* Build configuration list for PBXNativeTarget "studious-parakeet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD8D41F4221B073F0053EE39 /* Debug */,
+				BD8D41F5221B073F0053EE39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BD8D41F6221B073F0053EE39 /* Build configuration list for PBXNativeTarget "studious-parakeetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD8D41F7221B073F0053EE39 /* Debug */,
+				BD8D41F8221B073F0053EE39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BD8D41F9221B073F0053EE39 /* Build configuration list for PBXNativeTarget "studious-parakeetUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD8D41FA221B073F0053EE39 /* Debug */,
+				BD8D41FB221B073F0053EE39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD8D41BD221B073E0053EE39 /* Project object */;
+}
