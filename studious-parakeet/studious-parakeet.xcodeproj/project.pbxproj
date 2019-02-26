@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BD8D41C9221B073E0053EE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D41C8221B073E0053EE39 /* AppDelegate.swift */; };
-		BD8D41CB221B073E0053EE39 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD8D41CA221B073E0053EE39 /* GameScene.sks */; };
-		BD8D41CD221B073E0053EE39 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD8D41CC221B073E0053EE39 /* Actions.sks */; };
 		BD8D41CF221B073E0053EE39 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D41CE221B073E0053EE39 /* GameScene.swift */; };
 		BD8D41D1221B073E0053EE39 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D41D0221B073E0053EE39 /* GameViewController.swift */; };
 		BD8D41D4221B073E0053EE39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8D41D2221B073E0053EE39 /* Main.storyboard */; };
@@ -39,8 +37,6 @@
 /* Begin PBXFileReference section */
 		BD8D41C5221B073E0053EE39 /* studious-parakeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "studious-parakeet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8D41C8221B073E0053EE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BD8D41CA221B073E0053EE39 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		BD8D41CC221B073E0053EE39 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		BD8D41CE221B073E0053EE39 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		BD8D41D0221B073E0053EE39 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		BD8D41D3221B073E0053EE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,8 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				BD8D41C8221B073E0053EE39 /* AppDelegate.swift */,
-				BD8D41CA221B073E0053EE39 /* GameScene.sks */,
-				BD8D41CC221B073E0053EE39 /* Actions.sks */,
 				BD8D41CE221B073E0053EE39 /* GameScene.swift */,
 				BD8D41D0221B073E0053EE39 /* GameViewController.swift */,
 				BD8D41D2221B073E0053EE39 /* Main.storyboard */,
@@ -242,10 +236,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD8D41D4221B073E0053EE39 /* Main.storyboard in Resources */,
-				BD8D41CB221B073E0053EE39 /* GameScene.sks in Resources */,
 				BD8D41D6221B073E0053EE39 /* Assets.xcassets in Resources */,
 				BD8D41D9221B073E0053EE39 /* LaunchScreen.storyboard in Resources */,
-				BD8D41CD221B073E0053EE39 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +509,7 @@
 				BD8D41F5221B073F0053EE39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD8D41F6221B073F0053EE39 /* Build configuration list for PBXNativeTarget "studious-parakeetTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +518,7 @@
 				BD8D41F8221B073F0053EE39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD8D41F9221B073F0053EE39 /* Build configuration list for PBXNativeTarget "studious-parakeetUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +527,7 @@
 				BD8D41FB221B073F0053EE39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
