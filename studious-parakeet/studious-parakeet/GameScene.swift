@@ -46,6 +46,9 @@ class GameScene: SKScene
         // Add player sprite
         buildPlayerSprite()
         
+        physicsWorld.gravity = .zero
+        physicsWorld.contactDelegate = self
+        
         // Animate player sprite
         animatePlayerBoost()
         
@@ -116,7 +119,6 @@ class GameScene: SKScene
         player.physicsBody?.contactTestBitMask = PhysicsCategory.debris
         player.physicsBody?.collisionBitMask = PhysicsCategory.none
         player.physicsBody?.usesPreciseCollisionDetection = true
-        player.physicsBody?.affectedByGravity = false
         
         addChild(player)
     }
@@ -183,7 +185,6 @@ class GameScene: SKScene
         debris.physicsBody?.categoryBitMask = PhysicsCategory.debris
         debris.physicsBody?.contactTestBitMask = PhysicsCategory.player
         debris.physicsBody?.collisionBitMask = PhysicsCategory.none
-        debris.physicsBody?.affectedByGravity = false
         
         let randomX = random(min: 0, max: size.width)
         debris.position = CGPoint(x: randomX, y: size.height + debris.size.height)
@@ -233,18 +234,17 @@ class GameScene: SKScene
             debrisWaitDuration = 0.3
         }
     }
-    /*
+    
     func playerCollidedWithDebris(player: SKSpriteNode, debris: SKSpriteNode)
     {
-        print("Hit")
-        
-        player.position = CGPoint(x: -100, y: -100)
         score = 0
-        debrisWaitDuration = 3.2
-        run(SKAction.wait(forDuration: 6.0))
-        player.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        debrisWaitDuration = 2.0
     }
     
+}
+
+extension GameScene: SKPhysicsContactDelegate
+{
     func didBegin(_ contact: SKPhysicsContact)
     {
         var firstBody: SKPhysicsBody
@@ -265,8 +265,7 @@ class GameScene: SKScene
             }
         }
     }
-    */
-    
+
 }
 
 
