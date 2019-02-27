@@ -14,6 +14,8 @@
 //      https://www.raywenderlich.com/144-spritekit-animations-and-texture-atlases-in-swift
 //      https://www.appcoda.com/spritekit-introduction/
 //      https://developer.apple.com/documentation/swift/string
+//      https://stackoverflow.com/questions/34624292/change-time-interval-in-skaction-waitforduration-as-game-goes-on
+//      https://developer.apple.com/documentation/spritekit/skphysicsbody/1519774-affectedbygravity
 //
 
 import SpriteKit
@@ -22,8 +24,8 @@ import SpriteKit
 struct PhysicsCategory {
     static let none      : UInt32 = 0
     static let all       : UInt32 = UInt32.max
-    static let monster   : UInt32 = 0b1       // Monster (1)
-    static let player    : UInt32 = 0b10      // Player (2)
+    static let debris    : UInt32 = 0b1      // debris (1)
+    static let player    : UInt32 = 0b10     // Player (2)
 }
 
 class GameScene: SKScene
@@ -107,6 +109,15 @@ class GameScene: SKScene
         player = SKSpriteNode(texture: playerBoostFrames[0])
         player.position = CGPoint(x: size.width / 2, y: size.height / 2)
         player.setScale(1.5)
+        
+        player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
+        player.physicsBody?.isDynamic = true
+        player.physicsBody?.categoryBitMask = PhysicsCategory.player
+        player.physicsBody?.contactTestBitMask = PhysicsCategory.debris
+        player.physicsBody?.collisionBitMask = PhysicsCategory.none
+        player.physicsBody?.usesPreciseCollisionDetection = true
+        player.physicsBody?.affectedByGravity = false
+        
         addChild(player)
     }
     
@@ -167,6 +178,13 @@ class GameScene: SKScene
         
         debris.setScale(sizeRandom)
         
+        debris.physicsBody = SKPhysicsBody(circleOfRadius: debris.size.width / 2)
+        debris.physicsBody?.isDynamic = true
+        debris.physicsBody?.categoryBitMask = PhysicsCategory.debris
+        debris.physicsBody?.contactTestBitMask = PhysicsCategory.player
+        debris.physicsBody?.collisionBitMask = PhysicsCategory.none
+        debris.physicsBody?.affectedByGravity = false
+        
         let randomX = random(min: 0, max: size.width)
         debris.position = CGPoint(x: randomX, y: size.height + debris.size.height)
         
@@ -207,9 +225,7 @@ class GameScene: SKScene
     func scoreDebrisMod()
     {
         score += 1
-        scoreLabel.text = "Score: \(score)\nDWD: \(debrisWaitDuration)"
-        
-        
+        scoreLabel.text = "Score: \(score)"
         
         if(debrisWaitDuration > 0.3) {
             debrisWaitDuration -= 0.02
@@ -217,6 +233,39 @@ class GameScene: SKScene
             debrisWaitDuration = 0.3
         }
     }
+    /*
+    func playerCollidedWithDebris(player: SKSpriteNode, debris: SKSpriteNode)
+    {
+        print("Hit")
+        
+        player.position = CGPoint(x: -100, y: -100)
+        score = 0
+        debrisWaitDuration = 3.2
+        run(SKAction.wait(forDuration: 6.0))
+        player.position = CGPoint(x: size.width / 2, y: size.height / 2)
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact)
+    {
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        if ((firstBody.categoryBitMask & PhysicsCategory.debris != 0) &&
+            (secondBody.categoryBitMask & PhysicsCategory.player != 0)) {
+            if let debris = firstBody.node as? SKSpriteNode,
+                let player = secondBody.node as? SKSpriteNode {
+                playerCollidedWithDebris(player: player, debris: debris)
+            }
+        }
+    }
+    */
     
 }
 
