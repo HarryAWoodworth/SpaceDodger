@@ -12,7 +12,8 @@
 //      https://stackoverflow.com/questions/25277956/move-a-node-to-finger-using-swift-spritekit
 //      https://www.hackingwithswift.com/read/14/4/whack-to-win-skaction-sequences
 //      https://www.raywenderlich.com/144-spritekit-animations-and-texture-atlases-in-swift
-//
+//      https://www.appcoda.com/spritekit-introduction/
+//      https://developer.apple.com/documentation/swift/string
 //
 
 import SpriteKit
@@ -29,6 +30,9 @@ class GameScene: SKScene
 {
     private var player = SKSpriteNode()
     private var playerBoostFrames: [SKTexture] = []
+    private var debrisWaitDuration = 2.0
+    private var score = 0
+    private var scoreLabel = SKLabelNode()
     
     var currentAction: SKAction? = nil
     
@@ -42,6 +46,9 @@ class GameScene: SKScene
         
         // Animate player sprite
         animatePlayerBoost()
+        
+        // Add score label
+        buildScoreLabel()
         
         // Run update game in a loop
         run(SKAction.repeatForever(
@@ -63,11 +70,17 @@ class GameScene: SKScene
         run(SKAction.repeatForever(
             SKAction.sequence([
                 SKAction.run(addDebris),
-                SKAction.wait(forDuration: 1.0)
+                SKAction.wait(forDuration: debrisWaitDuration)
                 ])
         ))
 
-
+        // Run scoring/debris duration modifier in a loop
+        run(SKAction.repeatForever(
+            SKAction.sequence([
+                SKAction.run(scoreDebrisMod),
+                SKAction.wait(forDuration: 1.0)
+                ])
+        ))
     }
     
     // Create player sprite through texture atlas
@@ -90,6 +103,14 @@ class GameScene: SKScene
         player.position = CGPoint(x: size.width / 2, y: size.height / 2)
         player.setScale(1.5)
         addChild(player)
+    }
+    
+    func buildScoreLabel()
+    {
+        scoreLabel = SKLabelNode(text: "Score: 0")
+        scoreLabel.position = CGPoint(x: size.width / 2, y: size.height / 10)
+        scoreLabel.setScale(1.0)
+        addChild(scoreLabel)
     }
     
     func animatePlayerBoost()
@@ -137,14 +158,16 @@ class GameScene: SKScene
     {
         let debris = SKSpriteNode(imageNamed: "Debris")
         
-        debris.setScale(1.0)
+        let sizeRandom = random(min: 1.0, max: 5.0 )
+        
+        debris.setScale(sizeRandom)
         
         let randomX = random(min: 0, max: size.width)
         debris.position = CGPoint(x: randomX, y: size.height + debris.size.height)
         
         addChild(debris)
         
-        let randomDuration = random(min: CGFloat(4.0), max: CGFloat(6.0))
+        let randomDuration = random(min: CGFloat(2.0), max: CGFloat(6.0))
         
         let moveAction = SKAction.move(to: CGPoint(x: randomX, y: -debris.size.height), duration: TimeInterval(randomDuration))
         
@@ -173,6 +196,17 @@ class GameScene: SKScene
         let deleteAction = SKAction.removeFromParent()
         
         star.run(SKAction.sequence([moveAction,deleteAction]))
+    }
+    
+    // Increase the score and decrease the debris wait duration
+    func scoreDebrisMod()
+    {
+        score += 1
+        scoreLabel.text = "Score: \(score)\nDebrisWaitDuration: \(debrisWaitDuration)"
+        
+        if(debrisWaitDuration > 0) {
+            debrisWaitDuration -= 0.1
+        }
     }
     
 }
