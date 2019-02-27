@@ -34,16 +34,26 @@ class GameScene: SKScene
     private var player = SKSpriteNode()
     // Texture array for player animation
     private var playerBoostFrames: [SKTexture] = []
+    // Current move action used by the player
+    private var currentAction: SKAction? = nil
+    
     // Time between debris spawn
     private var debrisWaitDuration = 2.0
+    
     // Current Score
     private var score = 0
+    // High score
+    private var highScore = 0
     // Label to display score
     private var scoreLabel = SKLabelNode()
+    // Label to display high score
+    private var highScoreLabel = SKLabelNode()
+   
     // Preferences for storing/modifying high score
-    private let preferences = NSUserDefaults
-    // Current move action used by the player
-    var currentAction: SKAction? = nil
+    private let preferences = UserDefaults.standard
+    // Preferences Key for high score value
+    private let highScoreKey = "HIGH_SCORE_KEY"
+    
     
     // Runs after the scene is presented to the view
     override func didMove(to view: SKView)
@@ -60,6 +70,9 @@ class GameScene: SKScene
         
         // Animate player sprite
         animatePlayerBoost()
+        
+        // Get high score from preferences
+        highScore = preferences.integer(forKey: highScoreKey)
         
         // Add score label
         buildScoreLabel()
@@ -136,13 +149,18 @@ class GameScene: SKScene
         addChild(player)
     }
     
-    // Create and position the score label
+    // Create and position the score label / high score label
     func buildScoreLabel()
     {
+        // Score label
         scoreLabel = SKLabelNode(text: "Score: 0")
         scoreLabel.position = CGPoint(x: size.width / 2, y: size.height / 10)
-        scoreLabel.setScale(1.0)
         addChild(scoreLabel)
+        
+        // High score label
+        highScoreLabel = SKLabelNode(text: "HighScore: \(highScore)")
+        highScoreLabel.position = CGPoint(x: size.width / 2, y: size.height / 15)
+        addChild(highScoreLabel)
     }
     
     // Animation loop for the player that runs forever
@@ -250,6 +268,14 @@ class GameScene: SKScene
         // Update score label text
         scoreLabel.text = "Score: \(score)"
         
+        // Update high Score text
+        if(score > highScore)
+        {
+            highScoreLabel.text = "High Score: \(score)"
+        } else {
+            highScoreLabel.text = "High Score: \(highScore)"
+        }
+        
         // Decrement debrisWaitDuration, min in 0.3
         if(debrisWaitDuration > 0.3) {
             debrisWaitDuration -= 0.02
@@ -262,6 +288,17 @@ class GameScene: SKScene
     // Called by extention when a collision between player and debris happens
     func playerCollidedWithDebris(player: SKSpriteNode, debris: SKSpriteNode)
     {
+        // Update high score
+        if score > highScore
+        {
+            // Set high score
+            highScore = score
+            // Write to preferences
+            preferences.set(highScore, forKey: highScoreKey)
+            // Save preferences
+            preferences.synchronize()
+        }
+        
         // Reset score and debris wait duration
         score = 0
         debrisWaitDuration = 2.0
