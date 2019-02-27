@@ -15,6 +15,7 @@
 		BD8D41D9221B073E0053EE39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8D41D7221B073E0053EE39 /* LaunchScreen.storyboard */; };
 		BD8D41E4221B073F0053EE39 /* studious_parakeetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D41E3221B073F0053EE39 /* studious_parakeetTests.swift */; };
 		BD8D41EF221B073F0053EE39 /* studious_parakeetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D41EE221B073F0053EE39 /* studious_parakeetUITests.swift */; };
+		BDDF413F22270392006EEC21 /* PlayerBoost.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BDDF413E22270392006EEC21 /* PlayerBoost.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		BD8D41EA221B073F0053EE39 /* studious-parakeetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "studious-parakeetUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8D41EE221B073F0053EE39 /* studious_parakeetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studious_parakeetUITests.swift; sourceTree = "<group>"; };
 		BD8D41F0221B073F0053EE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDDF413E22270392006EEC21 /* PlayerBoost.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PlayerBoost.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		BD8D41C7221B073E0053EE39 /* studious-parakeet */ = {
 			isa = PBXGroup;
 			children = (
+				BDDF413E22270392006EEC21 /* PlayerBoost.atlas */,
 				BD8D41C8221B073E0053EE39 /* AppDelegate.swift */,
 				BD8D41CE221B073E0053EE39 /* GameScene.swift */,
 				BD8D41D0221B073E0053EE39 /* GameViewController.swift */,
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDDF413F22270392006EEC21 /* PlayerBoost.atlas in Resources */,
 				BD8D41D4221B073E0053EE39 /* Main.storyboard in Resources */,
 				BD8D41D6221B073E0053EE39 /* Assets.xcassets in Resources */,
 				BD8D41D9221B073E0053EE39 /* LaunchScreen.storyboard in Resources */,

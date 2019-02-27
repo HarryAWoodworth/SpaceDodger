@@ -11,12 +11,17 @@
 //      http://mammothinteractive.com/touches-and-moving-sprites-in-xcode-spritekit-swift-crash-course-free-tutorial/
 //      https://stackoverflow.com/questions/25277956/move-a-node-to-finger-using-swift-spritekit
 //      https://www.hackingwithswift.com/read/14/4/whack-to-win-skaction-sequences
+//      https://www.raywenderlich.com/144-spritekit-animations-and-texture-atlases-in-swift
+//
+//
 
 import SpriteKit
 
 class GameScene: SKScene
 {
-    let player = SKSpriteNode(imageNamed: "Player" )
+    private let player = SKSpriteNode(imageNamed: "Player" )
+    private var playerBoostFrames: [SKTexture] = []
+    
     var currentAction: SKAction? = nil
     
     // Runs after the scene is presented to the view
@@ -25,8 +30,9 @@ class GameScene: SKScene
         backgroundColor = SKColor.darkGray
         
         // Add player sprite
+        buildPlayerBoostSprite()
         player.position = CGPoint(x: size.width / 2, y: size.height / 2)
-        player.setScale(0.25)
+        player.setScale(1.0)
         addChild(player)
         
         // Run update game 10 times a second
@@ -36,6 +42,19 @@ class GameScene: SKScene
                     SKAction.wait(forDuration: 0.1)
                 ])
             ))
+    }
+    
+    // Create the player animated sprite through texture atlas
+    func buildPlayerBoostSprite()
+    {
+        let playerBoostAtlas = SKTextureAtlas(named: "PlayerBoost")
+        var boostFrames: [SKTexture] = []
+        
+        let numImages = playerBoostAtlas.textureNames.count
+        for i in 1...numImages {
+            let textureName = "player-boost\(i)"
+            boostFrames.append(playerBoostAtlas.textureNamed(textureName))
+        }
     }
     
     // Run all the actions added to the sequence
@@ -54,7 +73,7 @@ class GameScene: SKScene
         
         let direction = player.position - touchLoc
         
-        currentAction = SKAction.move(to: touchLoc, duration: 1.0 * Double(direction.length()/100) )
+        currentAction = SKAction.move(to: touchLoc, duration: 0.5 * Double(direction.length()/100) )
     }
     
 }
