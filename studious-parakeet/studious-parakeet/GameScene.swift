@@ -27,7 +27,7 @@ class GameScene: SKScene
     // Runs after the scene is presented to the view
     override func didMove(to view: SKView)
     {
-        backgroundColor = SKColor.darkGray
+        backgroundColor = SKColor.black
         
         // Add player sprite
         buildPlayerSprite()
@@ -39,7 +39,7 @@ class GameScene: SKScene
         run(SKAction.repeatForever(
                 SKAction.sequence([
                     SKAction.run(updateGame),
-                    SKAction.wait(forDuration: 0.1)
+                    SKAction.wait(forDuration: 0.01)
                 ])
             ))
     }
@@ -77,12 +77,13 @@ class GameScene: SKScene
             withKey:"PlayerBoosting")
     }
     
-    // Run all the actions added to the sequence
+    // Run all the actions added to the sequence and create stars
     func updateGame()
     {
         if(currentAction != nil) {
             player.run(currentAction!)
         }
+        addStar()
     }
     
     // Add touches to the action sequence
@@ -96,7 +97,37 @@ class GameScene: SKScene
         currentAction = SKAction.move(to: touchLoc, duration: 0.5 * Double(direction.length()/100) )
     }
     
+    // Random functions
+    func random() -> CGFloat {
+        return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+    }
+    
+    func random(min: CGFloat, max: CGFloat) -> CGFloat {
+        return random() * (max - min) + min
+    }
+    
+    // Create a star off screen at the top
+    func addStar()
+    {
+        let star = SKSpriteNode(imageNamed: "Star")
+        
+        let randomX = random(min: 0, max: size.width)
+        star.position = CGPoint(x: randomX, y: size.height + star.size.height)
+        
+        addChild(star)
+        
+        let randomDuration = random(min: CGFloat(2.0), max: CGFloat(4.0))
+        
+        let moveAction = SKAction.move(to: CGPoint(x: randomX, y: -star.size.height), duration: TimeInterval(randomDuration))
+        
+        let deleteAction = SKAction.removeFromParent()
+        
+        star.run(SKAction.sequence([moveAction,deleteAction]))
+    }
+    
 }
+
+
 
 // Adding '-' to CGPoint
 func -(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
