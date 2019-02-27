@@ -19,7 +19,7 @@ import SpriteKit
 
 class GameScene: SKScene
 {
-    private let player = SKSpriteNode(imageNamed: "Player" )
+    private var player = SKSpriteNode()
     private var playerBoostFrames: [SKTexture] = []
     
     var currentAction: SKAction? = nil
@@ -30,10 +30,10 @@ class GameScene: SKScene
         backgroundColor = SKColor.darkGray
         
         // Add player sprite
-        buildPlayerBoostSprite()
-        player.position = CGPoint(x: size.width / 2, y: size.height / 2)
-        player.setScale(1.0)
-        addChild(player)
+        buildPlayerSprite()
+        
+        // Animate player sprite
+        animatePlayerBoost()
         
         // Run update game 10 times a second
         run(SKAction.repeatForever(
@@ -44,9 +44,10 @@ class GameScene: SKScene
             ))
     }
     
-    // Create the player animated sprite through texture atlas
-    func buildPlayerBoostSprite()
+    // Create player sprite through texture atlas
+    func buildPlayerSprite()
     {
+        // Create the animation using the atlas
         let playerBoostAtlas = SKTextureAtlas(named: "PlayerBoost")
         var boostFrames: [SKTexture] = []
         
@@ -55,6 +56,25 @@ class GameScene: SKScene
             let textureName = "player-boost\(i)"
             boostFrames.append(playerBoostAtlas.textureNamed(textureName))
         }
+        
+        playerBoostFrames = boostFrames
+        
+        // Set/Add player sprite
+        player = SKSpriteNode(texture: playerBoostFrames[0])
+        player.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        player.setScale(1.5)
+        addChild(player)
+    }
+    
+    func animatePlayerBoost()
+    {
+        player.run(
+            SKAction.repeatForever(
+                SKAction.animate(with: playerBoostFrames,
+                                 timePerFrame: 0.1,
+                                 resize: false,
+                                 restore: true)),
+            withKey:"PlayerBoosting")
     }
     
     // Run all the actions added to the sequence
