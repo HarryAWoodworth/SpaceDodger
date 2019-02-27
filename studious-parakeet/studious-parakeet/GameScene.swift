@@ -17,6 +17,14 @@
 
 import SpriteKit
 
+// Constraints for physics categories
+struct PhysicsCategory {
+    static let none      : UInt32 = 0
+    static let all       : UInt32 = UInt32.max
+    static let monster   : UInt32 = 0b1       // Monster (1)
+    static let player    : UInt32 = 0b10      // Player (2)
+}
+
 class GameScene: SKScene
 {
     private var player = SKSpriteNode()
@@ -35,13 +43,31 @@ class GameScene: SKScene
         // Animate player sprite
         animatePlayerBoost()
         
-        // Run update game 10 times a second
+        // Run update game in a loop
         run(SKAction.repeatForever(
                 SKAction.sequence([
                     SKAction.run(updateGame),
                     SKAction.wait(forDuration: 0.01)
                 ])
             ))
+        
+        // Run addStar in a loop
+        run(SKAction.repeatForever(
+            SKAction.sequence([
+                SKAction.run(addStar),
+                SKAction.wait(forDuration: 0.1)
+                ])
+        ))
+        
+        // Run addDebris in a loop
+        run(SKAction.repeatForever(
+            SKAction.sequence([
+                SKAction.run(addDebris),
+                SKAction.wait(forDuration: 1.0)
+                ])
+        ))
+
+
     }
     
     // Create player sprite through texture atlas
@@ -83,7 +109,7 @@ class GameScene: SKScene
         if(currentAction != nil) {
             player.run(currentAction!)
         }
-        addStar()
+        //addStar()
     }
     
     // Add touches to the action sequence
@@ -106,17 +132,41 @@ class GameScene: SKScene
         return random() * (max - min) + min
     }
     
+    // Create debris objects
+    func addDebris()
+    {
+        let debris = SKSpriteNode(imageNamed: "Debris")
+        
+        debris.setScale(1.0)
+        
+        let randomX = random(min: 0, max: size.width)
+        debris.position = CGPoint(x: randomX, y: size.height + debris.size.height)
+        
+        addChild(debris)
+        
+        let randomDuration = random(min: CGFloat(4.0), max: CGFloat(6.0))
+        
+        let moveAction = SKAction.move(to: CGPoint(x: randomX, y: -debris.size.height), duration: TimeInterval(randomDuration))
+        
+        let deleteAction = SKAction.removeFromParent()
+        
+        debris.run(SKAction.sequence([moveAction,deleteAction]))
+
+    }
+    
     // Create a star off screen at the top
     func addStar()
     {
         let star = SKSpriteNode(imageNamed: "Star")
+        
+        star.setScale(random(min: 0.5, max: 4.0 ))
         
         let randomX = random(min: 0, max: size.width)
         star.position = CGPoint(x: randomX, y: size.height + star.size.height)
         
         addChild(star)
         
-        let randomDuration = random(min: CGFloat(2.0), max: CGFloat(4.0))
+        let randomDuration = random(min: CGFloat(2.0), max: CGFloat(6.0))
         
         let moveAction = SKAction.move(to: CGPoint(x: randomX, y: -star.size.height), duration: TimeInterval(randomDuration))
         
