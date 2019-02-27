@@ -66,14 +66,9 @@ class GameScene: SKScene
                 ])
         ))
         
-        // Run addDebris in a loop
-        run(SKAction.repeatForever(
-            SKAction.sequence([
-                SKAction.run(addDebris),
-                SKAction.wait(forDuration: debrisWaitDuration)
-                ])
-        ))
-
+        // Run addDebris in a recursive loop
+        run(SKAction.run(debrisRecursiveLoop))
+        
         // Run scoring/debris duration modifier in a loop
         run(SKAction.repeatForever(
             SKAction.sequence([
@@ -81,6 +76,16 @@ class GameScene: SKScene
                 SKAction.wait(forDuration: 1.0)
                 ])
         ))
+    }
+    
+    func debrisRecursiveLoop()
+    {
+        let recursive = SKAction.sequence([
+                            SKAction.wait(forDuration: debrisWaitDuration),
+                            SKAction.run(addDebris),
+                            SKAction.run({[unowned self] in NSLog("Block executed"); self.debrisRecursiveLoop()})
+                        ])
+        run(recursive, withKey: "RecursiveDebrisLoop")
     }
     
     // Create player sprite through texture atlas
@@ -202,10 +207,14 @@ class GameScene: SKScene
     func scoreDebrisMod()
     {
         score += 1
-        scoreLabel.text = "Score: \(score)\nDebrisWaitDuration: \(debrisWaitDuration)"
+        scoreLabel.text = "Score: \(score)\nDWD: \(debrisWaitDuration)"
         
-        if(debrisWaitDuration > 0) {
-            debrisWaitDuration -= 0.1
+        
+        
+        if(debrisWaitDuration > 0.3) {
+            debrisWaitDuration -= 0.02
+        } else {
+            debrisWaitDuration = 0.3
         }
     }
     
