@@ -10,15 +10,17 @@ import SpriteKit
 
 class GameScene: SKScene
 {
-    let label = SKLabelNode(text: "Hello SpriteKit!")
+    
+    let player = SKSpriteNode(imageNamed: "Player" )
     
     // Runs after the scene is presented to the view
     override func didMove(to view: SKView)
     {
-        // Set the label's position in the view (center)
-        label.position = CGPoint(x: view.frame.width / 2, y: view.frame.height / 2)
+        backgroundColor = SKColor.darkGray
         
-        // Add the label as a child node to the scene
-        addChild(label)
+        // Add player sprite
+        player.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        player.setScale(0.5)
+        addChild(player)
     }
 }

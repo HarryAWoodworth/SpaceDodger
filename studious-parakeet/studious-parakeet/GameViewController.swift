@@ -17,6 +17,13 @@ class GameViewController: UIViewController
         // Create the scene and put it into a view
         let scene = GameScene(size: view.frame.size)
         let skView = view as! SKView
+        
+        // Settings
+        skView.showsFPS = true
+        skView.showsNodeCount = true
+        skView.ignoresSiblingOrder = true
+        scene.scaleMode = .resizeFill
+        
         skView.presentScene(scene)
     }
 }
