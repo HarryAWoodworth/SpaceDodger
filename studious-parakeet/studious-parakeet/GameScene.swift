@@ -17,6 +17,7 @@
 //      https://developer.apple.com/documentation/swift/string
 //      https://stackoverflow.com/questions/34624292/change-time-interval-in-skaction-waitforduration-as-game-goes-on
 //      https://developer.apple.com/documentation/spritekit/skphysicsbody/1519774-affectedbygravity
+//      https://stackoverflow.com/questions/19206762/equivalent-to-shared-preferences-in-ios
 //
 
 import SpriteKit
