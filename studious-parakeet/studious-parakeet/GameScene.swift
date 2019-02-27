@@ -10,13 +10,14 @@
 //      https://www.raywenderlich.com/71-spritekit-tutorial-for-beginners
 //      http://mammothinteractive.com/touches-and-moving-sprites-in-xcode-spritekit-swift-crash-course-free-tutorial/
 //      https://stackoverflow.com/questions/25277956/move-a-node-to-finger-using-swift-spritekit
+//      https://www.hackingwithswift.com/read/14/4/whack-to-win-skaction-sequences
 
 import SpriteKit
 
 class GameScene: SKScene
 {
     let player = SKSpriteNode(imageNamed: "Player" )
-    var actionSequence: [SKAction] = []
+    var currentAction: SKAction? = nil
     
     // Runs after the scene is presented to the view
     override func didMove(to view: SKView)
@@ -28,6 +29,7 @@ class GameScene: SKScene
         player.setScale(0.25)
         addChild(player)
         
+        // Run update game 10 times a second
         run(SKAction.repeatForever(
                 SKAction.sequence([
                     SKAction.run(updateGame),
@@ -36,12 +38,15 @@ class GameScene: SKScene
             ))
     }
     
+    // Run all the actions added to the sequence
     func updateGame()
     {
-        player.run(SKAction.sequence(actionSequence))
-        actionSequence = []
+        if(currentAction != nil) {
+            player.run(currentAction!)
+        }
     }
     
+    // Add touches to the action sequence
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)
     {
         guard let touch = touches.first else { return }
@@ -49,8 +54,7 @@ class GameScene: SKScene
         
         let direction = player.position - touchLoc
         
-        let moveAction = SKAction.move(to: touchLoc, duration: 1.0 * Double(direction.length()/100) )
-        actionSequence.append(moveAction)
+        currentAction = SKAction.move(to: touchLoc, duration: 1.0 * Double(direction.length()/100) )
     }
     
 }
